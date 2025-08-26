@@ -55,7 +55,7 @@ const SalePage = () => {
 
   const getSaleDetails = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -103,7 +103,7 @@ const SalePage = () => {
 
   const getUserProfile = async (user) => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -135,11 +135,11 @@ const SalePage = () => {
 
   const buyItem = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -153,7 +153,7 @@ const SalePage = () => {
           saleInfo.paymentToken,
           saleInfo.price
         );
-        if (saleInfo.paymentToken !== ethers.constants.AddressZero) {
+        if (saleInfo.paymentToken !== ethers.ZeroAddress) {
           await approveERC20(
             signer,
             saleInfo.paymentToken,
@@ -181,11 +181,11 @@ const SalePage = () => {
 
   const cancelSale = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,

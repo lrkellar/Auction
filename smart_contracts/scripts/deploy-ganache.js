@@ -2,22 +2,27 @@ const hre = require("hardhat");
 const fs = require("fs");
 const fse = require("fs-extra");
 const { getAmountInWei, deployContract } = require("../utils/helpers");
+const { debugLog } = require("../utils/debug");
 
 async function main() {
   const deployNetwork = hre.network.name;
   const mintCost = getAmountInWei(10); // 10 matic
+  debugLog("Mint cost set", mintCost);
 
   // Deploy DAI ERC20 mock
   const mockDAI = await deployContract("ERC20Mock", [18]);
+  debugLog("Mock DAI deployed", mockDAI.target);
 
   // Deploy AART Artists contract
   const artistsContract = await deployContract("AARTArtists", []);
+  debugLog("Artists contract deployed", artistsContract.target);
 
   // Deploy AART NFT Collection contract
   const nftContract = await deployContract("AARTCollection", [
     artistsContract.target,
     mintCost,
   ]);
+  debugLog("NFT contract deployed", nftContract.target);
 
   // unpause NFT contract
   await nftContract.pause(2);
@@ -26,6 +31,7 @@ async function main() {
   const marketContract = await deployContract("AARTMarket", [
     nftContract.target,
   ]);
+  debugLog("Market contract deployed", marketContract.target);
 
   // add mock DAI to market supported tokens
   await marketContract.addSupportedToken(mockDAI.target);
@@ -54,6 +60,7 @@ async function main() {
 main()
   .then(() => process.exit(0))
   .catch((error) => {
+    debugLog("Deployment failed", error);
     console.error(error);
     process.exit(1);
   });

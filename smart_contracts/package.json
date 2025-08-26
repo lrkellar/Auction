@@ -1,6 +1,7 @@
 {
   "name": "aart_contracts",
   "version": "2.0.0",
+  "type": "module",
   "main": "index.js",
   "author": "kaymen99",
   "license": "MIT",
@@ -15,16 +16,16 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.2",
     "chai": "^4.3.10",
-    "ethers": "^6.8.1",
-    "hardhat": "^2.19.0",
-    "hardhat-contract-sizer": "^2.10.0"
+    "ethers": "^6.15.0",
+    "hardhat": "^3.0.1",
+    "hardhat-contract-sizer": "^2.10.1"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
-    "@nomicfoundation/hardhat-ethers": "^3.0.0",
-    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^4.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "dotenv": "^16.3.1",
-    "hardhat-gas-reporter": "^1.0.9",
-    "solidity-coverage": "^0.8.5"
+    "hardhat-gas-reporter": "^2.3.0",
+    "solidity-coverage": "^0.8.16"
   }
 }

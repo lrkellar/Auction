@@ -35,7 +35,7 @@ const AuctionSlider = () => {
 
   const getAuctionsList = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -97,7 +97,7 @@ const AuctionSlider = () => {
 
   const getUserProfile = async (user) => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
