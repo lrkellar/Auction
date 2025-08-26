@@ -76,7 +76,7 @@ const AuctionPage = () => {
 
   const getAuctionDetails = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -155,7 +155,7 @@ const AuctionPage = () => {
 
   const getUserProfile = async (user) => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -187,11 +187,11 @@ const AuctionPage = () => {
 
   const bid = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -230,11 +230,11 @@ const AuctionPage = () => {
 
   const directBuy = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -273,11 +273,11 @@ const AuctionPage = () => {
 
   const withdrawBid = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -298,11 +298,11 @@ const AuctionPage = () => {
 
   const endAuction = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -323,11 +323,11 @@ const AuctionPage = () => {
 
   const cancelAuction = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,

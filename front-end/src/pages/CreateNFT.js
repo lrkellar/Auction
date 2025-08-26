@@ -44,11 +44,11 @@ const CreateNFT = () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
       try {
         setLoading(true);
-        const provider = new ethers.providers.Web3Provider(
+        const provider = new ethers.BrowserProvider(
           window.ethereum,
           "any"
         );
-        const signer = provider.getSigner();
+        const signer = await provider.getSigner();
         const nft_contract = new ethers.Contract(
           nftContractAddress,
           nftContract.abi,

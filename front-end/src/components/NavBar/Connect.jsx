@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUserData, disconnect } from "../../features/userData";
-import { ethers, utils } from "ethers";
+import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import axios from "axios";
 import Account from "./Account";
@@ -48,11 +48,11 @@ function Connect() {
     profileImg = defaultProfileImg;
     if (typeof window.ethereum !== "undefined") {
       const connection = await web3Modal.connect();
-      const provider = new ethers.providers.Web3Provider(connection);
+      const provider = new ethers.BrowserProvider(connection);
 
       setInjectedProvider(provider);
 
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const chainId = await provider.getNetwork();
       const account = await signer.getAddress();
       const balance = await signer.getBalance();
@@ -79,7 +79,7 @@ function Connect() {
       dispatch(
         updateUserData({
           account: account,
-          balance: utils.formatUnits(balance),
+          balance: ethers.formatUnits(balance),
           network: networks[String(chainId.chainId)],
           registred: registred,
           username: username,

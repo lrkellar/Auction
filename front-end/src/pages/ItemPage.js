@@ -71,7 +71,7 @@ const ItemPage = () => {
 
   const getNftMetaData = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -105,7 +105,7 @@ const ItemPage = () => {
 
   const getNftOffers = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -142,7 +142,7 @@ const ItemPage = () => {
 
   const getUserProfile = async (user) => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -174,11 +174,11 @@ const ItemPage = () => {
 
   const makeOffer = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
 
       const market_contract = new ethers.Contract(
         marketContractAddress,
@@ -223,11 +223,11 @@ const ItemPage = () => {
 
   const acceptOffer = async (offerId) => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -248,11 +248,11 @@ const ItemPage = () => {
 
   const cancelOffer = async (offerId) => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
 
       const market_contract = new ethers.Contract(
         marketContractAddress,
@@ -269,11 +269,11 @@ const ItemPage = () => {
 
   const listNFT = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const market_contract = new ethers.Contract(
         marketContractAddress,
         marketContract.abi,
@@ -317,11 +317,11 @@ const ItemPage = () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
       try {
         setLoading(true);
-        const provider = new ethers.providers.Web3Provider(
+        const provider = new ethers.BrowserProvider(
           window.ethereum,
           "any"
         );
-        const signer = provider.getSigner();
+        const signer = await provider.getSigner();
         const market_contract = new ethers.Contract(
           marketContractAddress,
           marketContract.abi,

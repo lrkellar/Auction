@@ -52,7 +52,7 @@ const RegisterPage = () => {
   const getUserProfile = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
       reset();
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );
@@ -86,11 +86,11 @@ const RegisterPage = () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
       try {
         setLoading(true);
-        const provider = new ethers.providers.Web3Provider(
+        const provider = new ethers.BrowserProvider(
           window.ethereum,
           "any"
         );
-        const signer = provider.getSigner();
+        const signer = await provider.getSigner();
         const artists_contract = new ethers.Contract(
           artistsContractAddress,
           artistsContract.abi,
@@ -140,11 +140,11 @@ const RegisterPage = () => {
     ) {
       try {
         setLoading(true);
-        const provider = new ethers.providers.Web3Provider(
+        const provider = new ethers.BrowserProvider(
           window.ethereum,
           "any"
         );
-        const signer = provider.getSigner();
+        const signer = await provider.getSigner();
         const artists_contract = new ethers.Contract(
           artistsContractAddress,
           artistsContract.abi,
@@ -218,11 +218,11 @@ const RegisterPage = () => {
     ) {
       try {
         setLoading(true);
-        const provider = new ethers.providers.Web3Provider(
+        const provider = new ethers.BrowserProvider(
           window.ethereum,
           "any"
         );
-        const signer = provider.getSigner();
+        const signer = await provider.getSigner();
         const artists_contract = new ethers.Contract(
           artistsContractAddress,
           artistsContract.abi,

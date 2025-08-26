@@ -25,7 +25,7 @@ const SaleListing = () => {
 
   const getSalesList = async () => {
     if (wallet.network === networksMap[networkDeployedTo]) {
-      const provider = new ethers.providers.Web3Provider(
+      const provider = new ethers.BrowserProvider(
         window.ethereum,
         "any"
       );

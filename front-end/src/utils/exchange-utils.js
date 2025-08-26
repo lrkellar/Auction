@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ethers, utils } from "ethers";
+import { ethers } from "ethers";
 import qs from "qs";
 
 import ERC20 from "../artifacts/interfaces/IERC20.sol/IERC20.json";
@@ -12,7 +12,7 @@ const apiQuoteUrl = "https://polygon.api.0x.org/swap/v1/quote?";
 async function getAssetToAssetPrice(fromAsset, toAsset) {
   let response;
 
-  const unit = utils.parseEther("1", "ether");
+  const unit = ethers.parseEther("1");
   const params = {
     sellToken: fromAsset,
     buyToken: toAsset,
@@ -31,7 +31,7 @@ async function getAssetToAssetPrice(fromAsset, toAsset) {
 async function getAssetsToMaticPrice(assets) {
   let response;
 
-  const unit = utils.parseEther("1", "ether");
+  const unit = ethers.parseEther("1");
 
   const prices = await Promise.all(
     assets.map(async (asset, index) => {

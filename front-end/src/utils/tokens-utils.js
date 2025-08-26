@@ -3,7 +3,7 @@ import { mockDAIAddress } from "./contracts-config";
 import images from "../assets/images";
 
 // matic is native coin on the polygon chains
-const MATIC = ethers.constants.AddressZero;
+const MATIC = ethers.ZeroAddress;
 
 const tokens = {
   "Polygon Mainnet": [

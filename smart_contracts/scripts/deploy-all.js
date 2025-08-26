@@ -7,19 +7,23 @@ const {
   developmentChains,
   deployContract,
 } = require("../utils/helpers");
+const { debugLog } = require("../utils/debug");
 
 async function main() {
   const deployNetwork = hre.network.name;
   const mintCost = getAmountInWei(10); // 10 matic
+  debugLog("Mint cost set", mintCost);
 
   // Deploy AART Artists contract
   const artistsContract = await deployContract("AARTArtists", []);
+  debugLog("Artists contract deployed", artistsContract.target);
 
   // Deploy AART NFT Collection contract
   const nftContract = await deployContract("AARTCollection", [
     artistsContract.target,
     mintCost,
   ]);
+  debugLog("NFT contract deployed", nftContract.target);
 
   // unpause NFT contract
   await nftContract.pause(2);
@@ -28,6 +32,7 @@ async function main() {
   const marketContract = await deployContract("AARTMarket", [
     nftContract.target,
   ]);
+  debugLog("Market contract deployed", marketContract.target);
 
   console.log("AART Artists contract deployed at: ", artistsContract.target);
   console.log("AART NFT contract deployed at: ", nftContract.target);
@@ -65,6 +70,7 @@ async function main() {
 main()
   .then(() => process.exit(0))
   .catch((error) => {
+    debugLog("Deployment failed", error);
     console.error(error);
     process.exit(1);
   });
