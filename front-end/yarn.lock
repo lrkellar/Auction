@@ -4417,6 +4417,7 @@ __metadata:
     ethers: "npm:^6.15.0"
     font-awesome: "npm:^4.7.0"
     moment: "npm:^2.29.4"
+    multiformats: "npm:^13.4.0"
     qs: "npm:^6.11.2"
     react: "npm:^18.1.0"
     react-bootstrap: "npm:^2.4.0"
@@ -10561,7 +10562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"multiformats@npm:^13.0.0, multiformats@npm:^13.0.1, multiformats@npm:^13.1.0, multiformats@npm:^13.3.0, multiformats@npm:^13.3.1, multiformats@npm:^13.3.2":
+"multiformats@npm:^13.0.0, multiformats@npm:^13.0.1, multiformats@npm:^13.1.0, multiformats@npm:^13.3.0, multiformats@npm:^13.3.1, multiformats@npm:^13.3.2, multiformats@npm:^13.4.0":
   version: 13.4.0
   resolution: "multiformats@npm:13.4.0"
   checksum: 10c0/d23f3d1f25f2b46c766ffdf470feb3a82dd23ec33b69ac8efed535f01f196e0b592e24cc829f6d31d3c394fdd84838e5458fa7641fc7f861148c8ff1cf4ccd7e
