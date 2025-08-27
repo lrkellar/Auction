@@ -3,9 +3,9 @@
     Runs the verify task
 */
 
-const { run } = require("hardhat");
+import { run } from "hardhat";
 
-const verify = async (contractAddress, args) => {
+export const verify = async (contractAddress, args) => {
   console.log("Verifying contract...");
   try {
     await run("verify:verify", {
@@ -19,8 +19,4 @@ const verify = async (contractAddress, args) => {
       console.log(e);
     }
   }
-};
-
-module.exports = {
-  verify,
 };
