@@ -1,17 +1,19 @@
-require("dotenv").config();
-require("hardhat-contract-sizer");
-require("@nomiclabs/hardhat-etherscan");
-require("@nomicfoundation/hardhat-chai-matchers");
-require("@nomicfoundation/hardhat-ethers");
-require("hardhat-gas-reporter");
-require("solidity-coverage");
+import dotenv from "dotenv";
+import "hardhat-contract-sizer";
+import "@nomiclabs/hardhat-etherscan";
+import "@nomicfoundation/hardhat-chai-matchers";
+import "@nomicfoundation/hardhat-ethers";
+import "hardhat-gas-reporter";
+import "solidity-coverage";
+
+dotenv.config();
 
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
 const POLYGON_RPC_URL = process.env.POLYGON_RPC_URL;
 const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL;
 const MAINNET_FORK_RPC_URL = process.env.MAINNET_FORK_ALCHEMY_URL;
 
-module.exports = {
+const config = {
   solidity: {
     compilers: [
       {
@@ -64,3 +66,5 @@ module.exports = {
     timeout: 60000,
   },
 };
+
+export default config;
