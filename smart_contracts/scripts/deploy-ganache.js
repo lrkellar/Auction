@@ -1,6 +1,5 @@
 const hre = require("hardhat");
 const fs = require("fs");
-const fse = require("fs-extra");
 const { getAmountInWei, deployContract } = require("../utils/helpers");
 const { debugLog } = require("../utils/debug");
 
@@ -44,7 +43,9 @@ async function main() {
   /* transfer contracts addresses & ABIs to the front-end */
   if (fs.existsSync("../front-end/src")) {
     fs.rmSync("../src/artifacts", { recursive: true, force: true });
-    fse.copySync("./artifacts/contracts", "../front-end/src/artifacts");
+    fs.cpSync("./artifacts/contracts", "../front-end/src/artifacts", {
+      recursive: true,
+    });
     fs.writeFileSync(
       "../front-end/src/utils/contracts-config.js",
       `
