@@ -36,6 +36,7 @@ const RAW_RUNTIME_STATE =
           ["chai", "npm:4.4.0"],\
           ["dotenv", "npm:16.3.1"],\
           ["ethers", "npm:5.8.0"],\
+          ["fs-extra", "npm:11.3.1"],\
           ["hardhat", "virtual:a33f4857c82e1a8b026ae9dfc0d545cb435986fd2f02be64ed658f608db404c2e76acf75192e62099adfc4a3cf412abab3fe0ac299e671975463d144ae3adcfd#npm:2.26.3"],\
           ["hardhat-contract-sizer", "virtual:a33f4857c82e1a8b026ae9dfc0d545cb435986fd2f02be64ed658f608db404c2e76acf75192e62099adfc4a3cf412abab3fe0ac299e671975463d144ae3adcfd#npm:2.10.1"],\
           ["hardhat-gas-reporter", "virtual:a33f4857c82e1a8b026ae9dfc0d545cb435986fd2f02be64ed658f608db404c2e76acf75192e62099adfc4a3cf412abab3fe0ac299e671975463d144ae3adcfd#npm:2.3.0"],\
@@ -1472,6 +1473,7 @@ const RAW_RUNTIME_STATE =
           ["chai", "npm:4.4.0"],\
           ["dotenv", "npm:16.3.1"],\
           ["ethers", "npm:5.8.0"],\
+          ["fs-extra", "npm:11.3.1"],\
           ["hardhat", "virtual:a33f4857c82e1a8b026ae9dfc0d545cb435986fd2f02be64ed658f608db404c2e76acf75192e62099adfc4a3cf412abab3fe0ac299e671975463d144ae3adcfd#npm:2.26.3"],\
           ["hardhat-contract-sizer", "virtual:a33f4857c82e1a8b026ae9dfc0d545cb435986fd2f02be64ed658f608db404c2e76acf75192e62099adfc4a3cf412abab3fe0ac299e671975463d144ae3adcfd#npm:2.10.1"],\
           ["hardhat-gas-reporter", "virtual:a33f4857c82e1a8b026ae9dfc0d545cb435986fd2f02be64ed658f608db404c2e76acf75192e62099adfc4a3cf412abab3fe0ac299e671975463d144ae3adcfd#npm:2.3.0"],\
@@ -2889,6 +2891,16 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["fs-extra", [\
+      ["npm:11.3.1", {\
+        "packageLocation": "../../../root/.yarn/berry/cache/fs-extra-npm-11.3.1-4fd46d4895-10c0.zip/node_modules/fs-extra/",\
+        "packageDependencies": [\
+          ["fs-extra", "npm:11.3.1"],\
+          ["graceful-fs", "npm:4.2.11"],\
+          ["jsonfile", "npm:6.2.0"],\
+          ["universalify", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:7.0.1", {\
         "packageLocation": "../../../root/.yarn/berry/cache/fs-extra-npm-7.0.1-b33a5e53e9-10c0.zip/node_modules/fs-extra/",\
         "packageDependencies": [\
@@ -3732,6 +3744,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["graceful-fs", "npm:4.2.10"],\
           ["jsonfile", "npm:4.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:6.2.0", {\
+        "packageLocation": "../../../root/.yarn/berry/cache/jsonfile-npm-6.2.0-aefb9ffd45-10c0.zip/node_modules/jsonfile/",\
+        "packageDependencies": [\
+          ["graceful-fs", "npm:4.2.10"],\
+          ["jsonfile", "npm:6.2.0"],\
+          ["universalify", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5352,6 +5373,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../root/.yarn/berry/cache/universalify-npm-0.1.2-9b22d31d2d-10c0.zip/node_modules/universalify/",\
         "packageDependencies": [\
           ["universalify", "npm:0.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.0.1", {\
+        "packageLocation": "../../../root/.yarn/berry/cache/universalify-npm-2.0.1-040ba5a21e-10c0.zip/node_modules/universalify/",\
+        "packageDependencies": [\
+          ["universalify", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
