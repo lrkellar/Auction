@@ -151,7 +151,7 @@ const { developmentChains, deployContract } = require("../../utils/helpers");
                   user1.address,
                   randomUser.address,
                   tokenId,
-                  ethers.ZeroHash
+                  ethers.constants.HashZero
                 )
             ).to.be.revertedWithCustomError(contract, "AART__NotTransferable");
           });

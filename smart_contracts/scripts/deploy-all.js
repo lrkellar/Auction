@@ -1,13 +1,13 @@
-import hre from "hardhat";
-import fs from "fs";
-import fse from "fs-extra";
-import { verify } from "../utils/verify.js";
-import {
+const hre = require("hardhat");
+const fs = require("fs");
+const fse = require("fs-extra");
+const { verify } = require("../utils/verify");
+const {
   getAmountInWei,
   developmentChains,
   deployContract,
-} from "../utils/helpers.js";
-import { debugLog } from "../utils/debug.js";
+} = require("../utils/helpers");
+const { debugLog } = require("../utils/debug");
 
 async function main() {
   const deployNetwork = hre.network.name;
@@ -16,27 +16,27 @@ async function main() {
 
   // Deploy AART Artists contract
   const artistsContract = await deployContract("AARTArtists", []);
-  debugLog("Artists contract deployed", artistsContract.target);
+  debugLog("Artists contract deployed", artistsContract.address);
 
   // Deploy AART NFT Collection contract
   const nftContract = await deployContract("AARTCollection", [
-    artistsContract.target,
+    artistsContract.address,
     mintCost,
   ]);
-  debugLog("NFT contract deployed", nftContract.target);
+  debugLog("NFT contract deployed", nftContract.address);
 
   // unpause NFT contract
   await nftContract.pause(2);
 
   // Deploy AART market contract
   const marketContract = await deployContract("AARTMarket", [
-    nftContract.target,
+    nftContract.address,
   ]);
-  debugLog("Market contract deployed", marketContract.target);
+  debugLog("Market contract deployed", marketContract.address);
 
-  console.log("AART Artists contract deployed at: ", artistsContract.target);
-  console.log("AART NFT contract deployed at: ", nftContract.target);
-  console.log("AART market ontract deployed at: ", marketContract.target);
+  console.log("AART Artists contract deployed at: ", artistsContract.address);
+  console.log("AART NFT contract deployed at: ", nftContract.address);
+  console.log("AART market ontract deployed at: ", marketContract.address);
   console.log("Network deployed to : ", deployNetwork);
 
   /* transfer contracts addresses & ABIs to the front-end */
@@ -46,9 +46,9 @@ async function main() {
     fs.writeFileSync(
       "../front-end/src/utils/contracts-config.js",
       `
-      export const marketContractAddress = "${marketContract.target}"
-      export const nftContractAddress = "${nftContract.target}"
-      export const artistsContractAddress = "${artistsContract.target}"
+      export const marketContractAddress = "${marketContract.address}"
+      export const nftContractAddress = "${nftContract.address}"
+      export const artistsContractAddress = "${artistsContract.address}"
       export const networkDeployedTo = "${hre.network.config.chainId}"`
     );
   }
@@ -62,8 +62,8 @@ async function main() {
     await marketContract.deployTransaction.wait(6);
 
     // args represent contract constructor arguments
-    const args = [nftContract.target];
-    await verify(marketContract.target, args);
+    const args = [nftContract.address];
+    await verify(marketContract.address, args);
   }
 }
 
@@ -74,3 +74,4 @@ main()
     console.error(error);
     process.exit(1);
   });
+

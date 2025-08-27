@@ -30,7 +30,7 @@ const TEST_URI = "ipfs://test-nft-uri";
         before(async () => {
           // Deploy NFT Collection contract
           nftContract = await deployContract("AARTCollection", [
-            artistsNftContract.target,
+            artistsNftContract.address,
             mintFee,
           ]);
         });
@@ -40,7 +40,7 @@ const TEST_URI = "ipfs://test-nft-uri";
         });
         it("NFT contract should have correct initial parameters", async () => {
           expect(await nftContract.artistsNftContract()).to.equal(
-            artistsNftContract.target
+            artistsNftContract.address
           );
           expect(await nftContract.mintFee()).to.equal(mintFee);
           expect(await nftContract.paused()).to.equal(1);
@@ -51,7 +51,7 @@ const TEST_URI = "ipfs://test-nft-uri";
         describe("mintNFT()", () => {
           before(async () => {
             nftContract = await deployContract("AARTCollection", [
-              artistsNftContract.target,
+              artistsNftContract.address,
               mintFee,
             ]);
           });
@@ -102,7 +102,7 @@ const TEST_URI = "ipfs://test-nft-uri";
 
           before(async () => {
             nftContract = await deployContract("AARTCollection", [
-              artistsNftContract.target,
+              artistsNftContract.address,
               mintFee,
             ]);
 
@@ -185,7 +185,7 @@ const TEST_URI = "ipfs://test-nft-uri";
       describe("Owner Functions", () => {
         before(async () => {
           nftContract = await deployContract("AARTCollection", [
-            artistsNftContract.target,
+            artistsNftContract.address,
             mintFee,
           ]);
         });

@@ -1,4 +1,4 @@
-export function debugLog(message, error) {
+function debugLog(message, error) {
   if (process.env.DEBUG) {
     if (error) {
       console.error(`[DEBUG] ${message}`, error);
@@ -7,3 +7,6 @@ export function debugLog(message, error) {
     }
   }
 }
+
+module.exports = { debugLog };
+

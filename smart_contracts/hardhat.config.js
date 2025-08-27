@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
-import "hardhat-contract-sizer";
-import "@nomiclabs/hardhat-etherscan";
-import "@nomicfoundation/hardhat-chai-matchers";
-import "@nomicfoundation/hardhat-ethers";
-import "hardhat-gas-reporter";
-import "solidity-coverage";
+const dotenv = require("dotenv");
+require("hardhat-contract-sizer");
+require("@nomiclabs/hardhat-etherscan");
+require("@nomicfoundation/hardhat-chai-matchers");
+require("@nomiclabs/hardhat-ethers");
+require("hardhat-gas-reporter");
+require("solidity-coverage");
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ const POLYGON_RPC_URL = process.env.POLYGON_RPC_URL;
 const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL;
 const MAINNET_FORK_RPC_URL = process.env.MAINNET_FORK_ALCHEMY_URL;
 
-const config = {
+module.exports = {
   solidity: {
     compilers: [
       {
@@ -40,7 +40,7 @@ const config = {
     ganache: {
       chainId: 1337,
       url: "http://127.0.0.1:7545",
-      accounts: [process.env.PRIVATE_KEY],
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
     // mumbai: {
     //   url: MUMBAI_RPC_URL,
@@ -67,4 +67,3 @@ const config = {
   },
 };
 
-export default config;

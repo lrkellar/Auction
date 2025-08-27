@@ -1,38 +1,39 @@
-import { ethers } from "hardhat";
+const { ethers } = require("hardhat");
 
-export const developmentChains = ["hardhat", "localhost", "ganache"];
+const developmentChains = ["hardhat", "localhost", "ganache"];
 
-export function getAmountInWei(amount) {
-  return ethers.parseEther(amount.toString(), "ether");
+function getAmountInWei(amount) {
+  return ethers.utils.parseEther(amount.toString());
 }
 
-export function getAmountFromWei(amount) {
-  return Number(ethers.formatUnits(amount.toString(), "ether"));
+function getAmountFromWei(amount) {
+  return Number(ethers.utils.formatUnits(amount.toString(), "ether"));
 }
 
-export async function resetTime() {
+async function resetTime() {
   const now = Math.floor(new Date().getTime() / 1000);
   const blockNumber = await ethers.provider.getBlockNumber();
   const timestamp = (await ethers.provider.getBlock(blockNumber)).timestamp;
   const shift = now - timestamp;
   await ethers.provider.send("evm_increaseTime", [shift]);
-  await ethers.provider.send("evm_mine");
+  await ethers.provider.send("evm_mine", []);
 }
 
-export async function moveTimeTo(target) {
+async function moveTimeTo(target) {
   const now = Math.floor(new Date().getTime() / 1000);
   const delta = target - now;
   await ethers.provider.send("evm_increaseTime", [delta]);
-  await ethers.provider.send("evm_mine");
+  await ethers.provider.send("evm_mine", []);
 }
 
-export async function deployContract(name, args) {
-  const contract = await ethers.deployContract(name, args);
-  await contract.waitForDeployment();
+async function deployContract(name, args) {
+  const factory = await ethers.getContractFactory(name);
+  const contract = await factory.deploy(...args);
+  await contract.deployed();
   return contract;
 }
 
-export async function mintERC20(account, erc20Address, amount) {
+async function mintERC20(account, erc20Address, amount) {
   const erc20 = await ethers.getContractAt("IERC20Mock", erc20Address);
   const mint_tx = await erc20
     .connect(account)
@@ -40,14 +41,14 @@ export async function mintERC20(account, erc20Address, amount) {
   await mint_tx.wait(1);
 }
 
-export async function approveERC20(account, erc20Address, approvedAmount, spender) {
+async function approveERC20(account, erc20Address, approvedAmount, spender) {
   const erc20 = await ethers.getContractAt("IERC20Mock", erc20Address);
 
   const tx = await erc20.connect(account).approve(spender, approvedAmount);
   await tx.wait(1);
 }
 
-export async function mintNewNFT(nftContract, account) {
+async function mintNewNFT(nftContract, account) {
   const mintFee = await nftContract.mintFee();
   const TEST_URI = "ipfs://test-nft-uri";
   await nftContract
@@ -55,7 +56,7 @@ export async function mintNewNFT(nftContract, account) {
     .mintNFT(account.address, TEST_URI, { value: mintFee });
 }
 
-export async function mintNewNFTWithRoyalty(nftContract, account, royaltyFee) {
+async function mintNewNFTWithRoyalty(nftContract, account, royaltyFee) {
   const mintFee = await nftContract.mintFee();
   const TEST_URI = "ipfs://test-nft-uri";
   await nftContract
@@ -65,7 +66,22 @@ export async function mintNewNFTWithRoyalty(nftContract, account, royaltyFee) {
     });
 }
 
-export async function approveERC721(account, nftContract, tokenId, spender) {
+async function approveERC721(account, nftContract, tokenId, spender) {
   const tx = await nftContract.connect(account).approve(spender, tokenId);
   await tx.wait(1);
 }
+
+module.exports = {
+  developmentChains,
+  getAmountInWei,
+  getAmountFromWei,
+  resetTime,
+  moveTimeTo,
+  deployContract,
+  mintERC20,
+  approveERC20,
+  mintNewNFT,
+  mintNewNFTWithRoyalty,
+  approveERC721,
+};
+

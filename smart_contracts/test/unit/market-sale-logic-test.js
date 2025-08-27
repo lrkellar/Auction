@@ -30,7 +30,7 @@ const mintFee = getAmountInWei(10);
       async function deployNFTAndMarketContracts() {
         // Deploy NFT Collection contract
         nftContract = await deployContract("AARTCollection", [
-          artistsNftContract.target,
+          artistsNftContract.address,
           mintFee,
         ]);
 
@@ -39,13 +39,13 @@ const mintFee = getAmountInWei(10);
 
         // Deploy AART market contract
         marketContract = await deployContract("AARTMarket", [
-          nftContract.target,
+          nftContract.address,
         ]);
       }
 
       async function listItem(token) {
         // allow to supported tokens
-        if (token !== ethers.ZeroAddress) {
+        if (token !== ethers.constants.AddressZero) {
           await marketContract.connect(owner).addSupportedToken(token);
         }
 
@@ -56,13 +56,13 @@ const mintFee = getAmountInWei(10);
         tokenId = 0;
         price = getAmountInWei(10);
 
-        await approveERC721(user1, nftContract, tokenId, marketContract.target);
+        await approveERC721(user1, nftContract, tokenId, marketContract.address);
         await marketContract.connect(user1).listItem(tokenId, token, price);
       }
 
       async function listItemWithRoyalty(token, royaltyFeeBPS) {
         // allow to supported tokens
-        if (token !== ethers.ZeroAddress) {
+        if (token !== ethers.constants.AddressZero) {
           await marketContract.connect(owner).addSupportedToken(token);
         }
 
@@ -76,7 +76,7 @@ const mintFee = getAmountInWei(10);
           .transferFrom(user1.address, user2.address, tokenId);
 
         price = getAmountInWei(20);
-        await approveERC721(user2, nftContract, tokenId, marketContract.target);
+        await approveERC721(user2, nftContract, tokenId, marketContract.address);
         await marketContract.connect(user2).listItem(tokenId, token, price);
       }
 
@@ -104,14 +104,14 @@ const mintFee = getAmountInWei(10);
           // mint new NFT
           await mintNewNFT(nftContract, user1);
           tokenId = 0;
-          paymentToken = erc20Mock.target;
+          paymentToken = erc20Mock.address;
           price = getAmountInWei(10);
           // approve NFT to market contract
           await approveERC721(
             user1,
             nftContract,
             tokenId,
-            marketContract.target
+            marketContract.address
           );
           await expect(
             marketContract.connect(user1).listItem(tokenId, paymentToken, price)
@@ -124,7 +124,7 @@ const mintFee = getAmountInWei(10);
           // allow erc20Mock token
           await marketContract
             .connect(owner)
-            .addSupportedToken(erc20Mock.target);
+            .addSupportedToken(erc20Mock.address);
 
           await expect(
             marketContract.connect(user1).listItem(tokenId, paymentToken, price)
@@ -145,7 +145,7 @@ const mintFee = getAmountInWei(10);
           // mint new NFT
           await mintNewNFT(nftContract, user2);
           tokenId = 1;
-          paymentToken = ethers.ZeroAddress;
+          paymentToken = ethers.constants.AddressZero;
           price = getAmountInWei(10);
           await expect(
             marketContract.connect(user1).listItem(tokenId, paymentToken, price)
@@ -173,7 +173,7 @@ const mintFee = getAmountInWei(10);
               await deployNFTAndMarketContracts();
 
               // list NFT for sale
-              await listItem(erc20Mock.target);
+              await listItem(erc20Mock.address);
 
               // user1 erc20 balance
               user1InitialBalance = getAmountFromWei(
@@ -188,13 +188,13 @@ const mintFee = getAmountInWei(10);
             });
             it("should allow user to buy item", async () => {
               // mint erc20 tokens to user2
-              await mintERC20(user2, erc20Mock.target, price);
+              await mintERC20(user2, erc20Mock.address, price);
               // approve tokens to market
               await approveERC20(
                 user2,
-                erc20Mock.target,
+                erc20Mock.address,
                 price,
-                marketContract.target
+                marketContract.address
               );
               const listingId = 0;
 
@@ -241,7 +241,7 @@ const mintFee = getAmountInWei(10);
               await deployNFTAndMarketContracts();
 
               // list NFT for sale
-              await listItem(ethers.ZeroAddress);
+              await listItem(ethers.constants.AddressZero);
 
               // user1 matic balance
               user1InitialBalance = getAmountFromWei(
@@ -310,7 +310,7 @@ const mintFee = getAmountInWei(10);
 
               // create new offer with royalty NFT
               royaltyFeeBPS = 100;
-              await listItemWithRoyalty(erc20Mock.target, royaltyFeeBPS);
+              await listItemWithRoyalty(erc20Mock.address, royaltyFeeBPS);
 
               // user1 erc20 balance
               user1InitialBalance = getAmountFromWei(
@@ -329,13 +329,13 @@ const mintFee = getAmountInWei(10);
             });
             it("should allow user to buy item", async () => {
               // mint erc20 tokens to user2
-              await mintERC20(user3, erc20Mock.target, price);
+              await mintERC20(user3, erc20Mock.address, price);
               // approve tokens to market
               await approveERC20(
                 user3,
-                erc20Mock.target,
+                erc20Mock.address,
                 price,
-                marketContract.target
+                marketContract.address
               );
               const listingId = 0;
               await expect(
@@ -400,7 +400,7 @@ const mintFee = getAmountInWei(10);
 
               // create new offer with royalty NFT
               royaltyFeeBPS = 100;
-              await listItemWithRoyalty(ethers.ZeroAddress, royaltyFeeBPS);
+              await listItemWithRoyalty(ethers.constants.AddressZero, royaltyFeeBPS);
 
               // user1 matic balance
               user1InitialBalance = getAmountFromWei(
@@ -485,7 +485,7 @@ const mintFee = getAmountInWei(10);
           await deployNFTAndMarketContracts();
 
           // list NFT for sale
-          await listItem(erc20Mock.target);
+          await listItem(erc20Mock.address);
         });
         let listingId = 0;
         it("should not allow non seller to cancel listing", async () => {
