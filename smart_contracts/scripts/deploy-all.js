@@ -1,13 +1,13 @@
-const hre = require("hardhat");
-const fs = require("fs");
-const fse = require("fs-extra");
-const { verify } = require("../utils/verify");
-const {
+import hre from "hardhat";
+import fs from "fs";
+import fse from "fs-extra";
+import { verify } from "../utils/verify.js";
+import {
   getAmountInWei,
   developmentChains,
   deployContract,
-} = require("../utils/helpers");
-const { debugLog } = require("../utils/debug");
+} from "../utils/helpers.js";
+import { debugLog } from "../utils/debug.js";
 
 async function main() {
   const deployNetwork = hre.network.name;
