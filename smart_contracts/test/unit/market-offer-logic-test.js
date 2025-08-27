@@ -31,7 +31,7 @@ const mintFee = getAmountInWei(10);
       async function deployNFTAndMarketContracts() {
         // Deploy NFT Collection contract
         nftContract = await deployContract("AARTCollection", [
-          artistsNftContract.target,
+          artistsNftContract.address,
           mintFee,
         ]);
 
@@ -40,13 +40,13 @@ const mintFee = getAmountInWei(10);
 
         // Deploy AART market contract
         marketContract = await deployContract("AARTMarket", [
-          nftContract.target,
+          nftContract.address,
         ]);
       }
 
       async function createOffer(token) {
         // allow to supported tokens
-        if (token !== ethers.ZeroAddress) {
+        if (token !== ethers.constants.AddressZero) {
           await marketContract.connect(owner).addSupportedToken(token);
         }
 
@@ -62,9 +62,9 @@ const mintFee = getAmountInWei(10);
           new Date(new Date().getTime() + 20 * DAY * 1000) / 1000
         );
 
-        if (token !== ethers.ZeroAddress) {
+        if (token !== ethers.constants.AddressZero) {
           await mintERC20(user2, token, price);
-          await approveERC20(user2, token, price, marketContract.target);
+          await approveERC20(user2, token, price, marketContract.address);
           await marketContract
             .connect(user2)
             .makeOffer(tokenId, token, price, expireTime);
@@ -79,7 +79,7 @@ const mintFee = getAmountInWei(10);
 
       async function createOfferWithRoyalty(token, royaltyFeeBPS) {
         // allow to supported tokens
-        if (token !== ethers.ZeroAddress) {
+        if (token !== ethers.constants.AddressZero) {
           await marketContract.connect(owner).addSupportedToken(token);
         }
 
@@ -101,9 +101,9 @@ const mintFee = getAmountInWei(10);
           new Date(new Date().getTime() + 20 * DAY * 1000) / 1000
         );
 
-        if (token !== ethers.ZeroAddress) {
+        if (token !== ethers.constants.AddressZero) {
           await mintERC20(user3, token, price);
-          await approveERC20(user3, token, price, marketContract.target);
+          await approveERC20(user3, token, price, marketContract.address);
           await marketContract
             .connect(user3)
             .makeOffer(tokenId, token, price, expireTime);
@@ -139,7 +139,7 @@ const mintFee = getAmountInWei(10);
           });
           it("should not allow user to make offre with unsupported payment token", async () => {
             tokenId = 0;
-            paymentToken = erc20Mock.target;
+            paymentToken = erc20Mock.address;
             price = getAmountInWei(30);
 
             // 20 days into the future
@@ -160,7 +160,7 @@ const mintFee = getAmountInWei(10);
             // allow erc20Mock token
             await marketContract
               .connect(owner)
-              .addSupportedToken(erc20Mock.target);
+              .addSupportedToken(erc20Mock.address);
 
             await expect(
               marketContract
@@ -198,9 +198,9 @@ const mintFee = getAmountInWei(10);
           it("should allow user to make offer on existing AART token", async () => {
             await approveERC20(
               randomUser,
-              erc20Mock.target,
+              erc20Mock.address,
               price,
-              marketContract.target
+              marketContract.address
             );
 
             await expect(
@@ -229,7 +229,7 @@ const mintFee = getAmountInWei(10);
           });
           it("should not allow user to make offer on non AART token", async () => {
             tokenId = 0;
-            paymentToken = ethers.ZeroAddress;
+            paymentToken = ethers.constants.AddressZero;
             price = getAmountInWei(30);
             // 20 days into the future
             expireTime = Math.floor(
@@ -277,7 +277,7 @@ const mintFee = getAmountInWei(10);
           });
           it("should allow user to make offer on existing AART token", async () => {
             const marketBeforeBalance = getAmountFromWei(
-              await ethers.provider.getBalance(marketContract.target)
+              await ethers.provider.getBalance(marketContract.address)
             );
 
             await expect(
@@ -291,7 +291,7 @@ const mintFee = getAmountInWei(10);
               .withArgs(0, tokenId, randomUser.address);
 
             const marketAfterBalance = getAmountFromWei(
-              await ethers.provider.getBalance(marketContract.target)
+              await ethers.provider.getBalance(marketContract.address)
             );
 
             expect(
@@ -326,7 +326,7 @@ const mintFee = getAmountInWei(10);
               await deployNFTAndMarketContracts();
 
               // create new offer
-              await createOffer(erc20Mock.target);
+              await createOffer(erc20Mock.address);
 
               // user1 erc20 balance
               user1InitialBalance = getAmountFromWei(
@@ -352,7 +352,7 @@ const mintFee = getAmountInWei(10);
                 user1,
                 nftContract,
                 tokenId,
-                marketContract.target
+                marketContract.address
               );
               await expect(
                 marketContract.connect(user1).acceptOffer(tokenId, offerId)
@@ -399,7 +399,7 @@ const mintFee = getAmountInWei(10);
               await deployNFTAndMarketContracts();
 
               // create new offer
-              await createOffer(ethers.ZeroAddress);
+              await createOffer(ethers.constants.AddressZero);
 
               // user1 matic balance
               user1InitialBalance = getAmountFromWei(
@@ -425,7 +425,7 @@ const mintFee = getAmountInWei(10);
                 user1,
                 nftContract,
                 tokenId,
-                marketContract.target
+                marketContract.address
               );
               await expect(
                 marketContract.connect(user1).acceptOffer(tokenId, offerId)
@@ -480,7 +480,7 @@ const mintFee = getAmountInWei(10);
 
               // create new offer with royalty NFT
               royaltyFeeBPS = 100;
-              await createOfferWithRoyalty(erc20Mock.target, royaltyFeeBPS);
+              await createOfferWithRoyalty(erc20Mock.address, royaltyFeeBPS);
 
               // user1 erc20 balance
               user1InitialBalance = getAmountFromWei(
@@ -510,7 +510,7 @@ const mintFee = getAmountInWei(10);
                 user2,
                 nftContract,
                 tokenId,
-                marketContract.target
+                marketContract.address
               );
               await expect(
                 marketContract.connect(user2).acceptOffer(tokenId, offerId)
@@ -573,7 +573,7 @@ const mintFee = getAmountInWei(10);
 
               // create new offer with royalty NFT
               royaltyFeeBPS = 100;
-              await createOfferWithRoyalty(ethers.ZeroAddress, royaltyFeeBPS);
+              await createOfferWithRoyalty(ethers.constants.AddressZero, royaltyFeeBPS);
 
               // user1 matic balance
               user1InitialBalance = getAmountFromWei(
@@ -604,7 +604,7 @@ const mintFee = getAmountInWei(10);
                 user2,
                 nftContract,
                 tokenId,
-                marketContract.target
+                marketContract.address
               );
               await expect(
                 marketContract.connect(user2).acceptOffer(tokenId, offerId)
@@ -673,7 +673,7 @@ const mintFee = getAmountInWei(10);
             await deployNFTAndMarketContracts();
 
             // create new offer
-            await createOffer(erc20Mock.target);
+            await createOffer(erc20Mock.address);
           });
           it("should not allow non offerer to cancel offer", async () => {
             await expect(
@@ -684,7 +684,7 @@ const mintFee = getAmountInWei(10);
             );
           });
           it("should allow offerer to cancel his offer", async () => {
-            approveERC20(user2, erc20Mock.target, price, marketContract.target);
+            approveERC20(user2, erc20Mock.address, price, marketContract.address);
             await expect(
               marketContract.connect(user2).cancelOffer(tokenId, offerId)
             )
@@ -712,7 +712,7 @@ const mintFee = getAmountInWei(10);
             await deployNFTAndMarketContracts();
 
             // create new offer
-            await createOffer(ethers.ZeroAddress);
+            await createOffer(ethers.constants.AddressZero);
           });
           it("should not allow non offerer to cancel offer", async () => {
             await expect(

@@ -1,28 +1,28 @@
 {
   "name": "aart_contracts",
   "version": "2.0.0",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "author": "kaymen99",
   "license": "MIT",
   "scripts": {
-    "deploy": "npx hardhat run scripts/deploy-all.js",
-    "deploy-ganache": "npx hardhat run scripts/deploy-ganache.js --network ganache",
-    "compile": "npx hardhat compile",
-    "test": "npx hardhat test",
-    "coverage": "npx hardhat coverage --testfiles 'test/*.js'",
-    "size": "npx hardhat size-contracts"
+    "deploy": "hardhat run scripts/deploy-all.js",
+    "deploy-ganache": "hardhat run scripts/deploy-ganache.js --network ganache",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage --testfiles 'test/*.js'",
+    "size": "hardhat size-contracts"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.2",
     "chai": "^4.3.10",
-    "ethers": "^6.15.0",
-    "hardhat": "^3.0.1",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.22.5",
     "hardhat-contract-sizer": "^2.10.1"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
-    "@nomicfoundation/hardhat-ethers": "^4.0.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
     "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "dotenv": "^16.3.1",
     "hardhat-gas-reporter": "^2.3.0",
