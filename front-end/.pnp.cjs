@@ -35,11 +35,11 @@ const RAW_RUNTIME_STATE =
           ["@fortawesome/react-fontawesome", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:0.2.0"],\
           ["@mui/material", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:5.10.17"],\
           ["@reduxjs/toolkit", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:1.9.1"],\
+          ["@storacha/client", "npm:1.7.9"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:13.5.0"],\
           ["@ucanto/principal", "npm:9.0.2"],\
-          ["@web3-storage/w3up-client", "npm:17.3.0"],\
           ["aart-nft-marketplace", "workspace:."],\
           ["animate.css", "npm:4.1.1"],\
           ["axios", "npm:0.27.2"],\
@@ -5149,11 +5149,143 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@storacha/access", [\
+      ["npm:1.6.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-access-npm-1.6.0-b5d62d6095-10c0.zip/node_modules/@storacha/access/",\
+        "packageDependencies": [\
+          ["@ipld/car", "npm:5.4.2"],\
+          ["@ipld/dag-ucan", "npm:3.4.5"],\
+          ["@scure/bip39", "npm:1.6.0"],\
+          ["@storacha/access", "npm:1.6.0"],\
+          ["@storacha/capabilities", "npm:1.8.0"],\
+          ["@storacha/did-mailto", "npm:1.0.2"],\
+          ["@storacha/one-webcrypto", "npm:1.0.1"],\
+          ["@ucanto/client", "npm:9.0.1"],\
+          ["@ucanto/core", "npm:10.4.0"],\
+          ["@ucanto/interface", "npm:10.3.0"],\
+          ["@ucanto/principal", "npm:9.0.2"],\
+          ["@ucanto/transport", "npm:9.2.0"],\
+          ["@ucanto/validator", "npm:9.1.0"],\
+          ["bigint-mod-arith", "npm:3.3.1"],\
+          ["conf", "npm:11.0.2"],\
+          ["multiformats", "npm:13.4.0"],\
+          ["p-defer", "npm:4.0.1"],\
+          ["type-fest", "npm:4.41.0"],\
+          ["uint8arrays", "npm:5.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@storacha/blob-index", [\
+      ["npm:1.2.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-blob-index-npm-1.2.0-d14a0a44f5-10c0.zip/node_modules/@storacha/blob-index/",\
+        "packageDependencies": [\
+          ["@ipld/dag-cbor", "npm:9.2.4"],\
+          ["@storacha/blob-index", "npm:1.2.0"],\
+          ["@storacha/capabilities", "npm:1.8.0"],\
+          ["@storacha/one-webcrypto", "npm:1.0.1"],\
+          ["@ucanto/core", "npm:10.4.0"],\
+          ["@ucanto/interface", "npm:10.3.0"],\
+          ["carstream", "npm:2.3.0"],\
+          ["multiformats", "npm:13.4.0"],\
+          ["sade", "npm:1.8.1"],\
+          ["uint8arrays", "npm:5.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@storacha/capabilities", [\
+      ["npm:1.8.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-capabilities-npm-1.8.0-964b19ac4b-10c0.zip/node_modules/@storacha/capabilities/",\
+        "packageDependencies": [\
+          ["@storacha/capabilities", "npm:1.8.0"],\
+          ["@ucanto/core", "npm:10.4.0"],\
+          ["@ucanto/interface", "npm:10.3.0"],\
+          ["@ucanto/principal", "npm:9.0.2"],\
+          ["@ucanto/transport", "npm:9.2.0"],\
+          ["@ucanto/validator", "npm:9.1.0"],\
+          ["@web3-storage/data-segment", "npm:5.3.0"],\
+          ["multiformats", "npm:13.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@storacha/client", [\
+      ["npm:1.7.9", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-client-npm-1.7.9-7c836dc461-10c0.zip/node_modules/@storacha/client/",\
+        "packageDependencies": [\
+          ["@ipld/dag-ucan", "npm:3.4.5"],\
+          ["@storacha/access", "npm:1.6.0"],\
+          ["@storacha/blob-index", "npm:1.2.0"],\
+          ["@storacha/capabilities", "npm:1.8.0"],\
+          ["@storacha/client", "npm:1.7.9"],\
+          ["@storacha/did-mailto", "npm:1.0.2"],\
+          ["@storacha/filecoin-client", "npm:1.0.11"],\
+          ["@storacha/upload-client", "npm:1.3.2"],\
+          ["@ucanto/client", "npm:9.0.1"],\
+          ["@ucanto/core", "npm:10.4.0"],\
+          ["@ucanto/interface", "npm:10.3.0"],\
+          ["@ucanto/principal", "npm:9.0.2"],\
+          ["@ucanto/transport", "npm:9.2.0"],\
+          ["environment", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@storacha/did-mailto", [\
+      ["npm:1.0.2", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-did-mailto-npm-1.0.2-bf0632e3da-10c0.zip/node_modules/@storacha/did-mailto/",\
+        "packageDependencies": [\
+          ["@storacha/did-mailto", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@storacha/filecoin-client", [\
+      ["npm:1.0.11", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-filecoin-client-npm-1.0.11-b2fd654eb2-10c0.zip/node_modules/@storacha/filecoin-client/",\
+        "packageDependencies": [\
+          ["@ipld/dag-ucan", "npm:3.4.5"],\
+          ["@storacha/capabilities", "npm:1.8.0"],\
+          ["@storacha/filecoin-client", "npm:1.0.11"],\
+          ["@ucanto/client", "npm:9.0.1"],\
+          ["@ucanto/core", "npm:10.4.0"],\
+          ["@ucanto/interface", "npm:10.3.0"],\
+          ["@ucanto/transport", "npm:9.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@storacha/one-webcrypto", [\
       ["npm:1.0.1", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-one-webcrypto-npm-1.0.1-38efa01dc3-10c0.zip/node_modules/@storacha/one-webcrypto/",\
         "packageDependencies": [\
           ["@storacha/one-webcrypto", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@storacha/upload-client", [\
+      ["npm:1.3.2", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@storacha-upload-client-npm-1.3.2-c8d3cb8efe-10c0.zip/node_modules/@storacha/upload-client/",\
+        "packageDependencies": [\
+          ["@ipld/car", "npm:5.4.2"],\
+          ["@ipld/dag-cbor", "npm:9.2.4"],\
+          ["@ipld/dag-ucan", "npm:3.4.5"],\
+          ["@ipld/unixfs", "npm:3.0.0"],\
+          ["@storacha/blob-index", "npm:1.2.0"],\
+          ["@storacha/capabilities", "npm:1.8.0"],\
+          ["@storacha/filecoin-client", "npm:1.0.11"],\
+          ["@storacha/upload-client", "npm:1.3.2"],\
+          ["@ucanto/client", "npm:9.0.1"],\
+          ["@ucanto/core", "npm:10.4.0"],\
+          ["@ucanto/interface", "npm:10.3.0"],\
+          ["@ucanto/transport", "npm:9.2.0"],\
+          ["@web3-storage/data-segment", "npm:5.3.0"],\
+          ["ipfs-utils", "npm:9.0.14"],\
+          ["multiformats", "npm:13.4.0"],\
+          ["p-retry", "npm:5.1.2"],\
+          ["varint", "npm:6.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5717,18 +5849,19 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:18.11.18", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-18.11.18-d61e8a4a20-10c0.zip/node_modules/@types/node/",\
-        "packageDependencies": [\
-          ["@types/node", "npm:18.11.18"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:22.7.5", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-22.7.5-0428b60a8c-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
           ["@types/node", "npm:22.7.5"],\
           ["undici-types", "npm:6.19.8"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:24.3.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-24.3.0-ebc21e5665-10c0.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:24.3.0"],\
+          ["undici-types", "npm:7.10.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5847,10 +5980,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:0.12.2", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@types-retry-npm-0.12.2-e1f0617c50-10c0.zip/node_modules/@types/retry/",\
+      ["npm:0.12.1", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@types-retry-npm-0.12.1-05f3303aac-10c0.zip/node_modules/@types/retry/",\
         "packageDependencies": [\
-          ["@types/retry", "npm:0.12.2"]\
+          ["@types/retry", "npm:0.12.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6276,66 +6409,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@web3-storage/access", [\
-      ["npm:20.3.0", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-access-npm-20.3.0-b96ac7e32f-10c0.zip/node_modules/@web3-storage/access/",\
-        "packageDependencies": [\
-          ["@ipld/car", "npm:5.4.2"],\
-          ["@ipld/dag-ucan", "npm:3.4.5"],\
-          ["@scure/bip39", "npm:1.6.0"],\
-          ["@storacha/one-webcrypto", "npm:1.0.1"],\
-          ["@ucanto/client", "npm:9.0.1"],\
-          ["@ucanto/core", "npm:10.4.0"],\
-          ["@ucanto/interface", "npm:10.3.0"],\
-          ["@ucanto/principal", "npm:9.0.2"],\
-          ["@ucanto/transport", "npm:9.2.0"],\
-          ["@ucanto/validator", "npm:9.1.0"],\
-          ["@web3-storage/access", "npm:20.3.0"],\
-          ["@web3-storage/capabilities", "npm:18.1.0"],\
-          ["@web3-storage/did-mailto", "npm:2.1.0"],\
-          ["bigint-mod-arith", "npm:3.3.1"],\
-          ["conf", "npm:11.0.2"],\
-          ["multiformats", "npm:13.4.0"],\
-          ["p-defer", "npm:4.0.1"],\
-          ["type-fest", "npm:4.41.0"],\
-          ["uint8arrays", "npm:5.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@web3-storage/blob-index", [\
-      ["npm:1.0.5", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-blob-index-npm-1.0.5-4f07b894b2-10c0.zip/node_modules/@web3-storage/blob-index/",\
-        "packageDependencies": [\
-          ["@ipld/dag-cbor", "npm:9.2.4"],\
-          ["@storacha/one-webcrypto", "npm:1.0.1"],\
-          ["@ucanto/core", "npm:10.4.0"],\
-          ["@ucanto/interface", "npm:10.3.0"],\
-          ["@web3-storage/blob-index", "npm:1.0.5"],\
-          ["@web3-storage/capabilities", "npm:18.1.0"],\
-          ["carstream", "npm:2.3.0"],\
-          ["multiformats", "npm:13.4.0"],\
-          ["uint8arrays", "npm:5.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@web3-storage/capabilities", [\
-      ["npm:18.1.0", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-capabilities-npm-18.1.0-c5035327ec-10c0.zip/node_modules/@web3-storage/capabilities/",\
-        "packageDependencies": [\
-          ["@ucanto/core", "npm:10.4.0"],\
-          ["@ucanto/interface", "npm:10.3.0"],\
-          ["@ucanto/principal", "npm:9.0.2"],\
-          ["@ucanto/transport", "npm:9.2.0"],\
-          ["@ucanto/validator", "npm:9.1.0"],\
-          ["@web3-storage/capabilities", "npm:18.1.0"],\
-          ["@web3-storage/data-segment", "npm:5.3.0"],\
-          ["uint8arrays", "npm:5.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@web3-storage/data-segment", [\
       ["npm:5.3.0", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-data-segment-npm-5.3.0-032033697d-10c0.zip/node_modules/@web3-storage/data-segment/",\
@@ -6344,76 +6417,6 @@ const RAW_RUNTIME_STATE =
           ["@web3-storage/data-segment", "npm:5.3.0"],\
           ["multiformats", "npm:13.4.0"],\
           ["sync-multihash-sha2", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@web3-storage/did-mailto", [\
-      ["npm:2.1.0", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-did-mailto-npm-2.1.0-0474deef2d-10c0.zip/node_modules/@web3-storage/did-mailto/",\
-        "packageDependencies": [\
-          ["@web3-storage/did-mailto", "npm:2.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@web3-storage/filecoin-client", [\
-      ["npm:3.3.5", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-filecoin-client-npm-3.3.5-3c88d583f7-10c0.zip/node_modules/@web3-storage/filecoin-client/",\
-        "packageDependencies": [\
-          ["@ipld/dag-ucan", "npm:3.4.5"],\
-          ["@ucanto/client", "npm:9.0.1"],\
-          ["@ucanto/core", "npm:10.4.0"],\
-          ["@ucanto/interface", "npm:10.3.0"],\
-          ["@ucanto/transport", "npm:9.2.0"],\
-          ["@web3-storage/capabilities", "npm:18.1.0"],\
-          ["@web3-storage/filecoin-client", "npm:3.3.5"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@web3-storage/upload-client", [\
-      ["npm:17.1.4", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-upload-client-npm-17.1.4-a677001a11-10c0.zip/node_modules/@web3-storage/upload-client/",\
-        "packageDependencies": [\
-          ["@ipld/car", "npm:5.4.2"],\
-          ["@ipld/dag-cbor", "npm:9.2.4"],\
-          ["@ipld/dag-ucan", "npm:3.4.5"],\
-          ["@ipld/unixfs", "npm:3.0.0"],\
-          ["@ucanto/client", "npm:9.0.1"],\
-          ["@ucanto/core", "npm:10.4.0"],\
-          ["@ucanto/interface", "npm:10.3.0"],\
-          ["@ucanto/transport", "npm:9.2.0"],\
-          ["@web3-storage/blob-index", "npm:1.0.5"],\
-          ["@web3-storage/capabilities", "npm:18.1.0"],\
-          ["@web3-storage/data-segment", "npm:5.3.0"],\
-          ["@web3-storage/filecoin-client", "npm:3.3.5"],\
-          ["@web3-storage/upload-client", "npm:17.1.4"],\
-          ["ipfs-utils", "npm:9.0.14"],\
-          ["multiformats", "npm:13.4.0"],\
-          ["p-retry", "npm:6.2.1"],\
-          ["varint", "npm:6.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@web3-storage/w3up-client", [\
-      ["npm:17.3.0", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/@web3-storage-w3up-client-npm-17.3.0-206b3922f7-10c0.zip/node_modules/@web3-storage/w3up-client/",\
-        "packageDependencies": [\
-          ["@ipld/dag-ucan", "npm:3.4.5"],\
-          ["@ucanto/client", "npm:9.0.1"],\
-          ["@ucanto/core", "npm:10.4.0"],\
-          ["@ucanto/interface", "npm:10.3.0"],\
-          ["@ucanto/principal", "npm:9.0.2"],\
-          ["@ucanto/transport", "npm:9.2.0"],\
-          ["@web3-storage/access", "npm:20.3.0"],\
-          ["@web3-storage/blob-index", "npm:1.0.5"],\
-          ["@web3-storage/capabilities", "npm:18.1.0"],\
-          ["@web3-storage/did-mailto", "npm:2.1.0"],\
-          ["@web3-storage/filecoin-client", "npm:3.3.5"],\
-          ["@web3-storage/upload-client", "npm:17.1.4"],\
-          ["@web3-storage/w3up-client", "npm:17.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6618,11 +6621,11 @@ const RAW_RUNTIME_STATE =
           ["@fortawesome/react-fontawesome", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:0.2.0"],\
           ["@mui/material", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:5.10.17"],\
           ["@reduxjs/toolkit", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:1.9.1"],\
+          ["@storacha/client", "npm:1.7.9"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:fa0b5758142b4c31d9914a0cf05b7bd5aa436e87a5b45e4b7b835d41f04405f945d8d542bf2ee31785769d65cbc1d2bf618685c9de9951b8f0a5be1f02a2be3f#npm:13.5.0"],\
           ["@ucanto/principal", "npm:9.0.2"],\
-          ["@web3-storage/w3up-client", "npm:17.3.0"],\
           ["aart-nft-marketplace", "workspace:."],\
           ["animate.css", "npm:4.1.1"],\
           ["axios", "npm:0.27.2"],\
@@ -9704,6 +9707,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["environment", [\
+      ["npm:1.1.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/environment-npm-1.1.0-3f2409b698-10c0.zip/node_modules/environment/",\
+        "packageDependencies": [\
+          ["environment", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["err-code", [\
       ["npm:2.0.3", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/err-code-npm-2.0.3-082e0ff9a7-10c0.zip/node_modules/err-code/",\
@@ -10588,10 +10600,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["fast-fifo", [\
-      ["npm:1.1.0", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/fast-fifo-npm-1.1.0-2e54f1b632-10c0.zip/node_modules/fast-fifo/",\
+      ["npm:1.3.2", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/fast-fifo-npm-1.3.2-391cc25df4-10c0.zip/node_modules/fast-fifo/",\
         "packageDependencies": [\
-          ["fast-fifo", "npm:1.1.0"]\
+          ["fast-fifo", "npm:1.3.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -11925,13 +11937,13 @@ const RAW_RUNTIME_STATE =
           ["electron-fetch", "npm:1.9.1"],\
           ["err-code", "npm:3.0.1"],\
           ["ipfs-utils", "npm:9.0.14"],\
-          ["is-electron", "npm:2.2.1"],\
+          ["is-electron", "npm:2.2.2"],\
           ["iso-url", "npm:1.2.1"],\
           ["it-all", "npm:1.0.6"],\
           ["it-glob", "npm:1.0.2"],\
           ["it-to-stream", "npm:1.0.0"],\
           ["merge-options", "npm:3.0.4"],\
-          ["nanoid", "npm:3.3.4"],\
+          ["nanoid", "npm:3.3.11"],\
           ["native-fetch", "virtual:015393dfc36ab633fdcaf9de1e3ccde3db6b7bc83a4d98b995dfbb60bacfb7153d2e9c553b2acaf2f6be54b5cb0857ecd49daea9a6dcf87a8d83ce802dc28c9c#npm:3.0.0"],\
           ["node-fetch", "virtual:015393dfc36ab633fdcaf9de1e3ccde3db6b7bc83a4d98b995dfbb60bacfb7153d2e9c553b2acaf2f6be54b5cb0857ecd49daea9a6dcf87a8d83ce802dc28c9c#npm:2.7.0"],\
           ["react-native-fetch-api", "npm:3.0.0"],\
@@ -12030,10 +12042,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["is-electron", [\
-      ["npm:2.2.1", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/is-electron-npm-2.2.1-71e2127025-10c0.zip/node_modules/is-electron/",\
+      ["npm:2.2.2", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/is-electron-npm-2.2.2-f91452a3d8-10c0.zip/node_modules/is-electron/",\
         "packageDependencies": [\
-          ["is-electron", "npm:2.2.1"]\
+          ["is-electron", "npm:2.2.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12098,15 +12110,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/is-negative-zero-npm-2.0.2-0adac91f15-10c0.zip/node_modules/is-negative-zero/",\
         "packageDependencies": [\
           ["is-negative-zero", "npm:2.0.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["is-network-error", [\
-      ["npm:1.1.0", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/is-network-error-npm-1.1.0-31c8d0998d-10c0.zip/node_modules/is-network-error/",\
-        "packageDependencies": [\
-          ["is-network-error", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12437,12 +12440,12 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/it-to-stream-npm-1.0.0-294db689c3-10c0.zip/node_modules/it-to-stream/",\
         "packageDependencies": [\
           ["buffer", "npm:6.0.3"],\
-          ["fast-fifo", "npm:1.1.0"],\
+          ["fast-fifo", "npm:1.3.2"],\
           ["get-iterator", "npm:1.0.2"],\
           ["it-to-stream", "npm:1.0.0"],\
           ["p-defer", "npm:3.0.0"],\
           ["p-fifo", "npm:1.0.0"],\
-          ["readable-stream", "npm:3.6.0"]\
+          ["readable-stream", "npm:3.6.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -14037,6 +14040,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["mri", [\
+      ["npm:1.2.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/mri-npm-1.2.0-8ecee0357d-10c0.zip/node_modules/mri/",\
+        "packageDependencies": [\
+          ["mri", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["ms", [\
       ["npm:2.0.0", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/ms-npm-2.0.0-9e1101a471-10c0.zip/node_modules/ms/",\
@@ -14090,6 +14102,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["nanoid", [\
+      ["npm:3.3.11", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/nanoid-npm-3.3.11-f98c1f9ef6-10c0.zip/node_modules/nanoid/",\
+        "packageDependencies": [\
+          ["nanoid", "npm:3.3.11"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:3.3.4", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/nanoid-npm-3.3.4-3d250377d6-10c0.zip/node_modules/nanoid/",\
         "packageDependencies": [\
@@ -14561,7 +14580,7 @@ const RAW_RUNTIME_STATE =
       ["npm:1.0.0", {\
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/p-fifo-npm-1.0.0-70306fa5f2-10c0.zip/node_modules/p-fifo/",\
         "packageDependencies": [\
-          ["fast-fifo", "npm:1.1.0"],\
+          ["fast-fifo", "npm:1.3.2"],\
           ["p-defer", "npm:3.0.0"],\
           ["p-fifo", "npm:1.0.0"]\
         ],\
@@ -14631,12 +14650,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:6.2.1", {\
-        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/p-retry-npm-6.2.1-317647f1db-10c0.zip/node_modules/p-retry/",\
+      ["npm:5.1.2", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/p-retry-npm-5.1.2-5426d97d26-10c0.zip/node_modules/p-retry/",\
         "packageDependencies": [\
-          ["@types/retry", "npm:0.12.2"],\
-          ["is-network-error", "npm:1.1.0"],\
-          ["p-retry", "npm:6.2.1"],\
+          ["@types/retry", "npm:0.12.1"],\
+          ["p-retry", "npm:5.1.2"],\
           ["retry", "npm:0.13.1"]\
         ],\
         "linkType": "HARD"\
@@ -16720,7 +16738,7 @@ const RAW_RUNTIME_STATE =
           ["@protobufjs/path", "npm:1.1.2"],\
           ["@protobufjs/pool", "npm:1.1.0"],\
           ["@protobufjs/utf8", "npm:1.1.0"],\
-          ["@types/node", "npm:18.11.18"],\
+          ["@types/node", "npm:24.3.0"],\
           ["long", "npm:5.3.2"],\
           ["protobufjs", "npm:7.5.4"]\
         ],\
@@ -17564,6 +17582,16 @@ const RAW_RUNTIME_STATE =
           ["util-deprecate", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:3.6.2", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/readable-stream-npm-3.6.2-d2a6069158-10c0.zip/node_modules/readable-stream/",\
+        "packageDependencies": [\
+          ["inherits", "npm:2.0.4"],\
+          ["readable-stream", "npm:3.6.2"],\
+          ["string_decoder", "npm:1.3.0"],\
+          ["util-deprecate", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["readdirp", [\
@@ -17990,6 +18018,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["queue-microtask", "npm:1.2.3"],\
           ["run-parallel", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["sade", [\
+      ["npm:1.8.1", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/sade-npm-1.8.1-4759dc74c1-10c0.zip/node_modules/sade/",\
+        "packageDependencies": [\
+          ["mri", "npm:1.2.0"],\
+          ["sade", "npm:1.8.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -19685,6 +19723,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/undici-types-npm-6.19.8-9f12285b7a-10c0.zip/node_modules/undici-types/",\
         "packageDependencies": [\
           ["undici-types", "npm:6.19.8"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:7.10.0", {\
+        "packageLocation": "../../../../../AppData/Local/Yarn/Berry/cache/undici-types-npm-7.10.0-cd8324b9eb-10c0.zip/node_modules/undici-types/",\
+        "packageDependencies": [\
+          ["undici-types", "npm:7.10.0"]\
         ],\
         "linkType": "HARD"\
       }]\

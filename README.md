@@ -63,10 +63,20 @@ Please install or have installed the following:
 * [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) Chrome extension installed in your browser
 * [Ganache](https://trufflesuite.com/ganache/) for local smart contracts deployement and testing.
 
-The app uses `web3.storage` api to upload the generated NFT image & metadata into IPFS, so you need to create an account and a new api token [here](https://web3.storage), when you finish add your api token into the `src/utils/ipfsStorage.js` file:
-   ```js
-    const web3storage_key = "YOUR-WEB3.STORAGE-API-TOKEN";
-   ```
+The app uploads images/metadata to IPFS.
+
+- Primary: Storacha via `@storacha/client` (uses Spaces and UCAN proofs)
+- Fallback: web3.storage HTTP API (token-based)
+
+Configuration (front-end):
+
+- To use a specific Storacha Space, set an env var in `front-end/.env`:
+  - `REACT_APP_STORACHA_SPACE_DID=did:key:...`
+  - Note: the in-browser Storacha agent must have valid proofs for this DID. CLI proofs are not shared with the browser. If the agent has no proofs, uploads will fail and the app will fall back to web3.storage if configured.
+- To enable the fallback, create a web3.storage account and token [here](https://web3.storage), then set:
+  - `REACT_APP_WEB3_STORAGE_TOKEN=YOUR-WEB3.STORAGE-API-TOKEN`
+
+Create React App loads `REACT_APP_*` variables automatically. Restart `yarn start` after adding or changing env vars.
 
 Clone this repo with the command :
    ```sh
